@@ -1,6 +1,13 @@
 use anyhow::{anyhow, Result};
 use bezier_rs::{Bezier, TValueType};
-use fj::core::{objects::Region, operations::build::BuildRegion, services::Services};
+use fj::{
+    core::{
+        objects::Region,
+        operations::{build::BuildRegion, update::UpdateRegion},
+        services::Services,
+    },
+    math::Winding,
+};
 use font::{glyph::Segment, Font, Glyph, Offset};
 
 const DEFAULT_RESOLUTION: usize = 5;
@@ -82,10 +89,17 @@ impl GlyphRegionBuilder {
                     .collect()
             })
             .collect();
-        let mut polygons = vec![];
+        let mut polygons: Vec<Region> = vec![];
         for mut region_points in point_lists {
             region_points.reverse();
-            polygons.push(Region::polygon(region_points, services));
+            let region = Region::polygon(region_points, services);
+            if region.exterior().winding() == Winding::Cw {
+                let last_polygon = polygons.remove(0);
+                let new_region = last_polygon.add_interiors([region.exterior().clone()]);
+                polygons.insert(0, new_region);
+            } else {
+                polygons.push(region);
+            }
         }
         polygons
     }

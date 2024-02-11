@@ -14,13 +14,12 @@ For now, see the [tests](tests/test_extrusion.rs). More examples coming soon!
 
 ## Limitations
 
-* Currently supports only stencil fonts
-  * Right now all regions returned are exterior regions. Any glyphs with interiors will fail to extrude. Since stencil fonts have no interiors, they work well.
-* Rendering using Fornjot is slow - try exporting to an STL and viewing in another viewer.
+* Unlikely to support fonts with nested features (like a zero with a dot in the center).
+* Rendering using Fornjot is slow - try exporting to an STL/OBJ/3MF and viewing in another viewer.
+* All glyphs are individually normalized to a height of 1 - this should be changed, but I need to learn more about fonts first.
 
 ## Future
 
-* Support for interior polygons
 * Support string generation (currently only single glyph at a time)
 * Reduce number of vertices used
 

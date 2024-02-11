@@ -40,6 +40,7 @@ fn extrude(glyph_regions: Vec<Region>, services: &mut Services) -> Solid {
 }
 
 #[test_case("tests/fonts/AllertaStencil/AllertaStencil-Regular.ttf")]
+#[test_case("tests/fonts/NotoSans/NotoSans-Regular.ttf")]
 fn test_font(font_file: &str) {
     let mut services = Services::new();
     let mut file = font::File::open(font_file).unwrap();
