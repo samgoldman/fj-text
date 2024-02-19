@@ -10,10 +10,10 @@ repository = "https://github.com/samgoldman/fj-text"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.79"
+anyhow = "1.0.80"
 bezier-rs = "0.4.0"
 fj = "0.48.0"
-font = "0.29.1"
+font = "0.29.2"
 
 [dev-dependencies]
 test-case = "3.3.1"
