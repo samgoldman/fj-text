@@ -162,9 +162,9 @@ dependencies = [
 
 [[package]]
 name = "anyhow"
-version = "1.0.81"
+version = "1.0.86"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0952808a6c2afd1aa8947271f3a60f1a6763c7b912d210184c5149b5cf147247"
+checksum = "b3d1d046238990b9cf5bcde22a3fb3584ee5cf65fb2765f454ed428c7a0063da"
 
 [[package]]
 name = "approx"
@@ -771,9 +771,9 @@ dependencies = [
 
 [[package]]
 name = "font"
-version = "0.29.3"
+version = "0.30.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d24d1fd89b6bb02eacbd32c65be185575cba9fa4b39737cf8881bb78c90de43e"
+checksum = "92136e42882f9926a0cf9d6e296d6322020e785d399ba5c6acb26fafea78c241"
 dependencies = [
  "opentype",
  "typeface",
