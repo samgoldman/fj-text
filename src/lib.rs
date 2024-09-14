@@ -4,11 +4,11 @@ use fj::{
     core::{
         objects::Region,
         operations::{build::BuildRegion, update::UpdateRegion},
-        services::Services,
+        Core,
     },
     math::Winding,
 };
-use font::{glyph::Segment, Font, Glyph, Offset};
+use font::{glyph::Segment, Font, Glyph, Offset, Read};
 
 const DEFAULT_RESOLUTION: usize = 5;
 
@@ -17,7 +17,7 @@ pub struct GlyphRegionBuilder {
 }
 
 impl GlyphRegionBuilder {
-    pub fn try_new(font: &mut Font, character: char) -> Result<Self> {
+    pub fn try_new<T: Read>(font: &mut Font<T>, character: char) -> Result<Self> {
         let glyph = font.glyph(character)?;
         match glyph {
             Some(glyph) => Ok(Self { glyph }),
@@ -25,7 +25,7 @@ impl GlyphRegionBuilder {
         }
     }
 
-    pub fn build(self, services: &mut Services) -> Vec<Region> {
+    pub fn build(self, core: &mut Core) -> Vec<Region> {
         let mut point_lists = vec![];
         let mut a = Offset::default();
         for contour in self.glyph.iter() {
@@ -92,10 +92,10 @@ impl GlyphRegionBuilder {
         let mut polygons: Vec<Region> = vec![];
         for mut region_points in point_lists {
             region_points.reverse();
-            let region = Region::polygon(region_points, services);
-            if region.exterior().winding() == Winding::Cw {
+            let region = Region::polygon(region_points, core);
+            if region.exterior().winding(&core.layers.geometry) == Winding::Cw {
                 let last_polygon = polygons.remove(0);
-                let new_region = last_polygon.add_interiors([region.exterior().clone()]);
+                let new_region = last_polygon.add_interiors([region.exterior().clone()], core);
                 polygons.insert(0, new_region);
             } else {
                 polygons.push(region);
