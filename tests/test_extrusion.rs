@@ -22,11 +22,11 @@ fn extrude(glyph_regions: Vec<Region>, core: &mut fj::core::Core) -> Solid {
         let sweep_path: Vector<3> = Vector::from([0., 0., 0.1]);
 
         let polygon = region.insert(core);
-        solids.push(Sketch::empty().add_regions(vec![polygon], core).sweep_sketch(
-            bottom_surface,
-            sweep_path,
-            core,
-        ));
+        solids.push(
+            Sketch::empty()
+                .add_regions(vec![polygon], core)
+                .sweep_sketch(bottom_surface, sweep_path, core),
+        );
     }
 
     let mut all = Solid::empty();

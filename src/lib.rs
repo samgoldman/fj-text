@@ -1,6 +1,13 @@
 use anyhow::{anyhow, Result};
 use bezier_rs::{Bezier, TValueType};
-use fj::{core::{objects::Region, operations::{build::BuildRegion, update::UpdateRegion}, Core}, math::Winding};
+use fj::{
+    core::{
+        objects::Region,
+        operations::{build::BuildRegion, update::UpdateRegion},
+        Core,
+    },
+    math::Winding,
+};
 use font::{glyph::Segment, Font, Glyph, Offset, Read};
 
 const DEFAULT_RESOLUTION: usize = 5;
