@@ -1,7 +1,7 @@
 use anyhow::{anyhow, Result};
 use bezier_rs::{Bezier, TValueType};
 use fj::{core::{objects::Region, operations::{build::BuildRegion, update::UpdateRegion}, Core}, math::Winding};
-use font::{glyph::Segment, Font, Glyph, Offset};
+use font::{glyph::Segment, Font, Glyph, Offset, Read};
 
 const DEFAULT_RESOLUTION: usize = 5;
 
@@ -10,7 +10,7 @@ pub struct GlyphRegionBuilder {
 }
 
 impl GlyphRegionBuilder {
-    pub fn try_new(font: &mut Font, character: char) -> Result<Self> {
+    pub fn try_new<T: Read>(font: &mut Font<T>, character: char) -> Result<Self> {
         let glyph = font.glyph(character)?;
         match glyph {
             Some(glyph) => Ok(Self { glyph }),

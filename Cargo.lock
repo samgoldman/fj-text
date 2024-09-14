@@ -759,9 +759,9 @@ dependencies = [
 
 [[package]]
 name = "font"
-version = "0.29.3"
+version = "0.39.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d24d1fd89b6bb02eacbd32c65be185575cba9fa4b39737cf8881bb78c90de43e"
+checksum = "f1f32ffeccd8f5ec343c78aa00957e85da06bdc3867e70f65c52cb722a5f14ba"
 dependencies = [
  "opentype",
  "typeface",
@@ -1484,9 +1484,9 @@ checksum = "3fdb12b2476b595f9358c5161aa467c2438859caa136dec86c26fdd2efe17b92"
 
 [[package]]
 name = "opentype"
-version = "0.35.2"
+version = "0.38.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "587a1b7e6795d407972c6744e21c7202d57362cbd4b6dd16ae57736370056051"
+checksum = "9bce8df14c3005bfe49506ffb80ae66834bf8934dfe093403c80dc8fd0c5ed12"
 dependencies = [
  "postscript",
  "truetype",
@@ -2520,9 +2520,9 @@ dependencies = [
 
 [[package]]
 name = "webtype"
-version = "0.13.1"
+version = "0.16.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c3dee17ddca833e4da744fd533d8a328ba4cbf1237b48038e9a6abd258c415e5"
+checksum = "c5dc491992ae93fe30f72d047e9d4d3d7132e3402c1c8c8b7f6447c20816088c"
 dependencies = [
  "brotli-decompressor",
  "opentype",
