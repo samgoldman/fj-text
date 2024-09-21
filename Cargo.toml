@@ -14,6 +14,7 @@ anyhow = "1.0.88"
 bezier-rs = "0.4.0"
 fj = "0.49.0"
 font = "0.39.0"
+glam = "0.24.2"
 
 [dev-dependencies]
 test-case = "3.3.1"

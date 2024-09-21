@@ -53,3 +53,21 @@ fn test_font(font_file: &str) {
         assert!(solid.shells().len() > 0, "Failed on character: {c}");
     }
 }
+
+#[test_case("tests/fonts/AllertaStencil/AllertaStencil-Regular.ttf")]
+#[test_case("tests/fonts/NotoSans/NotoSans-Regular.ttf")]
+fn test_rotate(font_file: &str) {
+    let fj = fj::Instance::new();
+    let mut core = fj.core;
+    let mut file = font::File::open(font_file).unwrap();
+    let mut font = &mut file[0];
+    for c in "1".chars() {
+        let glyph_regions = GlyphRegionBuilder::try_new(&mut font, c)
+            .unwrap()
+            .rotate(180.0)
+            .resolution(1)
+            .build(&mut core);
+        let solid = extrude(glyph_regions, &mut core);
+        assert!(solid.shells().len() > 0, "Failed on character: {c}");
+    }
+}

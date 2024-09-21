@@ -711,6 +711,7 @@ dependencies = [
  "bezier-rs",
  "fj",
  "font",
+ "glam",
  "test-case",
 ]
 
