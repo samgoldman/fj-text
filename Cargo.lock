@@ -277,9 +277,9 @@ dependencies = [
 
 [[package]]
 name = "brotli-decompressor"
-version = "2.5.1"
+version = "4.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4e2e4afe60d7dd600fdd3de8d0f08c2b7ec039712e3b6137ff98b7004e82de4f"
+checksum = "9a45bd2e4095a8b518033b128020dd4a55aab1c0a381ba4404a472630f4bc362"
 dependencies = [
  "alloc-no-stdlib",
  "alloc-stdlib",
@@ -759,9 +759,9 @@ dependencies = [
 
 [[package]]
 name = "font"
-version = "0.39.3"
+version = "0.40.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ee6f98a186d82e2da0c6a8d488dffbf8b5a4c7bd1b8af510be49fef1bb081c31"
+checksum = "333bc3b0717e3cf0eda8dad7ddc30301bce3d8181ff25d35c575f59b8559ecc5"
 dependencies = [
  "opentype",
  "typeface",
@@ -2249,9 +2249,9 @@ dependencies = [
 
 [[package]]
 name = "typeface"
-version = "0.4.2"
+version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e1fdbc53aae2bf36c48f1bc36d73a62b84091b6535b08e4e15bca876ce5e8050"
+checksum = "191ea6762cbcd705fbed8f58573fd6c654453ff3da60adb293d9f255bc92af8e"
 
 [[package]]
 name = "typenum"
@@ -2520,9 +2520,9 @@ dependencies = [
 
 [[package]]
 name = "webtype"
-version = "0.16.0"
+version = "0.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c5dc491992ae93fe30f72d047e9d4d3d7132e3402c1c8c8b7f6447c20816088c"
+checksum = "da0eba238ebe70af27974b828030c48ab97c60e46ec5500997589ad420419308"
 dependencies = [
  "brotli-decompressor",
  "opentype",
